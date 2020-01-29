@@ -6,11 +6,6 @@ from io import BytesIO
 import spacy, configparser, logging, pytz, os, time, datetime, random
 from includes import mysql
 
-try:
-    os.chdir("D:\github_repos\landtags-parlis-monitoring\\backend")
-except: 
-    os.chdir("/mnt/d/github_repos/landtags-parlis-monitoring")
-
 class parlisScrape():
 
     def __init__(self):
