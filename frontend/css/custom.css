@@ -1,0 +1,342 @@
+/* roboto-regular - latin */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../webfonts/roboto-v20-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Roboto'), local('Roboto-Regular'),
+         url('../webfonts/roboto-v20-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../webfonts/roboto-v20-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../webfonts/roboto-v20-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('../webfonts/roboto-v20-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../webfonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  }
+  
+
+a {
+    color: #ff8800;
+}
+
+a:hover {
+    color: #aa5c03;;
+    text-decoration: none;
+}
+
+#content {
+    margin-right: 1rem;
+    margin-lefT: 1rem;
+}
+
+
+
+
+
+/* Menu */
+.sidebar-brand-icon img {
+    max-width: 60%;
+}
+
+.bg-gradient-primary {
+    background-color: #ff8800 !important;
+    background-image: none !important;
+}
+
+.sidebar-heading {
+    word-break: break-all;
+}
+
+/* Cards */
+.border-left-primary {
+    border-left: 0.25rem solid #ff8800 !important;
+}
+
+.border-left-warning {
+    border-left: 0.25rem solid rgb(160, 0, 0) !important;
+}
+
+.text-primary {
+    color: #ff8800 !important;
+}
+
+#wrapper #content-wrapper {
+    overflow-x: inherit !important;
+}
+
+.single .card {
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-left: 0.25rem solid #ff8800;
+    margin-bottom: 0.25rem;
+}
+
+.card-single {
+    width: 100% !important;
+    margin-left: 1rem !important;
+    margin-right: 1rem !important;
+    border-left: 0.25rem solid #ff8800;
+    margin-bottom: 0.25rem;
+}
+
+.search {
+    margin-bottom: 1rem;
+}
+.search .card-header {
+    background-color: #ff8800;
+    color: white !important;
+}
+
+.orange-header {
+    background-color: #ff8800;
+    color: white !important;
+    border-left: none !important;
+    border-radius: 0;
+}
+
+.search h6 {
+    color: white !important;
+}
+.search .card-header:after {
+    color: white !important;
+}
+
+.search label {
+    font-weight: 700;
+    font-size: 80%;
+}
+
+.search input, .search textarea, .search select {
+    margin-bottom: 0.7rem;
+}
+.searchwords input {
+    font-size: 60%;
+}
+
+.searchwords select {
+    font-size: 60%;
+}
+
+.card {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.searchwords .box {
+    background: lightgrey;
+    padding: 0.3rem;
+    margin: 0.7rem;
+    border-radius: 5px;
+}
+
+.searchform {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-header .btn {
+    display: block;
+    padding: 0.2rem;
+}
+
+.bg-lightred {
+    background: #fad9d9 !important;
+    border: none !important;
+}
+
+.bg-lightblue {
+    background: #dbe8ff !important;
+    border: none !important;
+}
+
+.bg-lightgreen {
+    background: #dffde8 !important;
+    border: none !important;
+}
+
+.bg-lightgrey {
+    border: none !important;
+}
+
+.search {
+    border-left: none !important;
+}
+
+.search .card-body {
+    border-left: 0.25rem solid #ff8800;
+}
+
+.bg-primary {
+    background-color: #ff8800 !important;
+}
+
+.success {
+    width: 100%;
+    padding:3rem;
+    font-size: 150%;
+    font-weight: 700;
+    color: white;
+    background:#017c04;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.fail {
+    width: 100%;
+    padding:3rem;
+    font-size: 150%;
+    font-weight: 700;
+    color: white;
+    background:#990000;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.noborder {
+    border: none !important;
+}
+
+.card-header h6 {
+    font-size: 130%;
+}
+
+/* Texts */
+.text-centered {
+    text-align: center !important;
+}
+
+.padded {
+    padding: 1rem;
+}
+
+/* Forms */
+form input {
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+    padding: 0.3rem;
+}
+form select {
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+    padding: 0.3rem;
+}
+
+/* Archive */
+
+.upl {
+
+    text-align: center;
+}
+
+.upl label {
+    font-weight: 800;
+    margin-top: 0.5rem;
+}
+
+.upl input {
+    background-color: white;
+    color: black;
+    
+}
+
+.upl textarea {
+    background-color: white;
+    color: black;
+    border-radius: 4px;
+    min-width: 40%;
+}
+
+.welcome {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 20vh;
+}
+
+.welcome h2 {
+    text-align: center !important; 
+    font-style: italic;
+    color: #888888;
+}
+
+.welcome h1 {
+    text-align: center !important; 
+    font-weight: 700;
+    color: #ff8800;
+}
+
+.welcome .btn {
+    font-size: 140%;
+    color: white;
+}
+
+.wordclouds {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+}
+
+.cloud {
+    min-width: 31%;
+    width: 40rem;
+    max-width: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-bottom: 2rem;
+    margin-right: 1%;
+    border-radius: 10px;
+    padding: 0.6rem;
+    border: 1px solid #e4e4e4;
+    overflow:hidden;
+}
+
+.cloud .title {
+    font-weight: 700;
+    font-size: 140%;
+}
+
+.row h1 {
+    text-align: center !important; 
+    font-weight: 600;
+    color: #ff8800;
+    padding-top: 3rem;
+}
+
+.searchwords {
+    padding: 0.5rem !important;
+    font-size: 200%;
+    text-align: center;
+    margin:auto;
+}
+
+.searchwords .btn {
+    font-size: 70%;
+    font-weight: 700;
+}
+
+.searchwords input {
+    max-width: 100%;
+}
+
+.searchwords small {
+    font-size: 40%;
+}
+
+.msg h2 {
+    color: #888888;
+    font-style: italic;
+    text-align: center;
+}
+
+.faq .card-header {
+    font-size: 120%;
+    font-weight: 700;
+    color: #ff8800;
+}
+
+.faq {
+    text-align: left;
+}
+
+.faq .card {
+    margin-bottom: 2rem;
+}
