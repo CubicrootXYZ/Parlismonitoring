@@ -4,7 +4,7 @@ from includes import mysql
 from sqlescapy import sqlescape
 from falcon import uri
 
-r = redis.Redis()
+r = redis.Redis(host="redis")
 #print(conn.set('hello', 'world'))
 #print(conn.get('hello'))
 
