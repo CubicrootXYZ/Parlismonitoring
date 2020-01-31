@@ -99,10 +99,10 @@ series.heatRules.push({
 	var chart = am4core.create("chartdiv<?php echo $i;?>", am4plugins_wordCloud.WordCloud);
 	var series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
 
-	series.accuracy = 2;
-	series.step = 10;
+	series.accuracy = 1;
+	series.step = 4;
 	series.rotationThreshold = 0.7;
-	series.maxCount = 200;
+	series.maxCount = 5;
 	series.minWordLength = 2;
 	series.labels.template.tooltipText = "{word}: {value} Erwähnungen";
 	series.fontFamily = "Courier New";
