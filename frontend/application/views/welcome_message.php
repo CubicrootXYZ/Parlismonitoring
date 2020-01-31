@@ -75,7 +75,8 @@ series.heatRules.push({
 <div class="wordclouds">
 
 	<?php $i = 0;
-	if (isset($wordclouds[0]['color_bg'])):
+	$show_wordclouds = 0;
+	if (isset($wordclouds[0]['color_bg']) && $show_wordclouds == 1):
 	?>
 	<?php foreach ($wordclouds as $wordcloud): ?>
 	<div class="cloud" style="background-color: <?php echo $wordcloud['color_bg']; ?>">
