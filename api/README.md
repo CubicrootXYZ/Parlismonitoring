@@ -28,7 +28,7 @@ This is a sample of the config file.
 
 # Installation
 1. Copy the folder to your local storage
-2. Set up a local redis server. If you want to use a remote one you'll have to adjust the connection directly in the run.py
+2. Set up a redis server. Adjust the connection directly in the run.py
 3. Make sure you have installes all librarys needed and gunicorn
 4. Adapt the settings to your needs
 5. Run `bash startapi.bash`
