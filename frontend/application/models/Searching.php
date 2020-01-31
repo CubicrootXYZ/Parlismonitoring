@@ -33,7 +33,7 @@ class Searching extends CI_Model {
                 } 
             } else {
                 try {
-                    print(APIURL."searchfiles?".$append);
+                    
                     $content = json_decode(file_get_contents(APIURL."searchfiles?".$append), true);
                 } catch (Exception $e) {
                     $ret = [];
