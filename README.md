@@ -10,7 +10,7 @@ For more view the subfolders.
 
 For more details on how to manually setup the single parts, visit the corresponding subfolders. 
 
-I recommend using docker. You'll need 4 containers, use docker-compose to manage them. 
+I recommend using docker for the backend and api. You'll need 3 containers, use docker-compose to manage them. 
 
 Here a sample `docker-compose.yml`:
 
@@ -34,14 +34,6 @@ services:
     image: 'redis'
     ports:
       - "6379:6379"
-    restart: always
-  parlismonitoring-frontend:
-    image: 'cubicrootxyz/parlismonitoring-frontend'
-    volumes:
-      - /yourpath/config.php:/var/www/html/application/config/config.php
-      - /yourpath/constants.php:/var/www/html/application/config/constants.php
-    ports:
-      - "6022:80"
     restart: always
 ```
 
