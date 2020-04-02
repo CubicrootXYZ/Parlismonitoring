@@ -15,12 +15,12 @@
       <link rel="stylesheet" href="<?php echo base_url('css/bootstrap.min.css');?>">
       <script src="<?php echo base_url('js/bootstrap.min.js');?>" ></script>
       <!-- Charts -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js" integrity="sha256-qSIshlknROr4J8GMHRlW3fGKrPki733tLq+qeMCR05Q=" crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js" integrity="sha256-xKeoJ50pzbUGkpQxDYHD7o7hxe0LaOGeguUidbq6vis=" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css" integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA=" crossorigin="anonymous" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.js" integrity="sha256-arMsf+3JJK2LoTGqxfnuJPFTU4hAK57MtIPdFpiHXOU=" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+      <script src="<?php echo base_url('js/Chart.bundle.min.js');?>"></script>
+      <script src="<?php echo base_url('js/Chart.js');?>"></script>
+      <script src="<?php echo base_url('js/Chart.min.js');?>"></script>
+      <link href="<?php echo base_url('css/Chart.css');?>" rel="stylesheet" type="text/css">
+      <link href="<?php echo base_url('css/Chart.min.css');?>" rel="stylesheet" type="text/css">
+
       <!-- Custom CSS -->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/custom.css');?>" />
    </head>

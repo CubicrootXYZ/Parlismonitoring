@@ -8,10 +8,11 @@
 </style>
 
 <!-- Resources -->
-<script src="https://www.amcharts.com/lib/4/core.js"></script>
-<script src="https://www.amcharts.com/lib/4/charts.js"></script>
-<script src="https://www.amcharts.com/lib/4/plugins/wordCloud.js"></script>
-<script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+<script src="<?php echo base_url('js/core.js');?>"></script>
+<script src="<?php echo base_url('js/amchart.js');?>"></script>
+<script src="<?php echo base_url('js/animated.js');?>"></script>
+<script src="<?php echo base_url('js/wordcloud.js');?>"></script>
+
 
 <!-- Chart code -->
 <script>
