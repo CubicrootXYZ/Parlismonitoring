@@ -66,7 +66,7 @@ series.heatRules.push({
 	<h1 ><?php echo SITETITLE;?></h1><br>
 	<h2 class="">Dokumente suchen, Trends erkennen, Auswertungen einsehen</h2>
 	<br>
-	<a href="/trends" class="btn btn-warning">Trends anschauen <i class="fas fa-angle-right"></i></a>
+	<a href="/stats/trends" class="btn btn-warning">Trends anschauen <i class="fas fa-angle-right"></i></a>
 	</div>
 
 </div>
