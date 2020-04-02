@@ -23,7 +23,7 @@
     Wer steht hinter diesem Projekt?
     </div>
     <div class="card-body">
-    Dieses Projekt wird von der Piratenpartei betrieben. Weitere Informationen und Ansprechpartner sind dem Impressum zu entnehmen. <br>Entwickelt wurde die Software von <a href="https://github.com/CubicrootXYZ" target="_blank">cubicroot</a>.
+    Dieses Projekt wird privat betrieben. Weitere Informationen und Ansprechpartner sind dem Impressum zu entnehmen. <br>Entwickelt wurde die Software von <a href="https://github.com/CubicrootXYZ" target="_blank">cubicroot</a>.
     </div>
     </div>
 
@@ -57,7 +57,7 @@
     Wie finanziert sich dieses Projekt?
     </div>
     <div class="card-body">
-    Die Kosten übernimmt die Piratenpartei. 
+    Die Kosten übernimmt der Betreiber. 
     </div>
     </div>
 

@@ -7,6 +7,7 @@
       <!-- Theme CSS -->
       <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/sb-admin-2.min.css');?>" />
       <link href="<?php echo base_url('css/all.css');?>" rel="stylesheet" type="text/css">
+      <link href="<?php echo base_url('css/fontawesome.css');?>" rel="stylesheet" type="text/css">
       <!-- jQuery -->
       <script src="<?php echo base_url('js/jquery-3.3.1.slim.min.js');?>" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <!-- Popper -->
