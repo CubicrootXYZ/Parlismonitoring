@@ -8,6 +8,8 @@ For more view the subfolders.
 
 ## Installation
 
+### Backend, API, Frontend via Docker
+
 For more details on how to manually setup the single parts, visit the corresponding subfolders. 
 
 I recommend using docker for the backend and api. You'll need 3 containers, use docker-compose to manage them. 
@@ -38,3 +40,19 @@ services:
 ```
 
 For more details on the docker containers visit my [docker profile](https://hub.docker.com/u/cubicrootxyz).
+
+### Notifier 
+
+**Requirements:** Python 3.6 or newer, Orator (`pip install orator`)
+
+The notifier emails you all new and interesting files via mail. Run it with a cronjob, your cron file (open with `crontab -e`) should look like this if you want a mail every saturday at 10 am:
+```
+...
+0 10 * * 6 /usr/bin/python3 /storage/scripts/parlis-notifier/run.py
+...
+```
+
+0. Make sure all requirements are installed
+1. copy the `run.py` and the `config.ini` to a local folder
+2. edit the config file according to your needs (more in the documentation in the notifier folder)
+3. add the `run.py` to your cron file
