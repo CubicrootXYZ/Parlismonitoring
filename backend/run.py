@@ -75,6 +75,7 @@ class parlisScrape():
                     file['keywords_content'] = self.getKeywords(file_content)
                 except Exception as e: 
                     self.logger.info("Not able of catching PDF file: %s", e)
+                    continue
 
                 # insert all keywords into the database
                 file['keywords_id'] = self.insertKeywords(file['keywords'])           
