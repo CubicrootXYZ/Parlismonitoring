@@ -1,3 +1,5 @@
+**VERSION 2 IS COMING. TAKE A LOOK IN THE "v2" BRANCH**
+
 # Parlismonitoring
 
 Monitors files published in the PARLIS system from Baden-Württemberg.
