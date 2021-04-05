@@ -11,7 +11,7 @@ class File(db.Entity):
     number = Required(str)
     publish_date = Required(datetime)
     type = Required(str)
-    author = Required(str) # TODO nialexe move to separate table
+    author = Required(str)
     file_size = Optional(int, size=64)
     word_count = Optional(int)
     insert_date = Required(datetime)

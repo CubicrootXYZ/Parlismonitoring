@@ -1,9 +1,12 @@
+# python 3.7.3
 from pony import orm
 from models.models import db
 from includes import logger
 from scraper import Scraper
 from tagger import Tagger
-import configparser, thread, time, rand
+import configparser, time
+import threading
+from random import randint
 
 log = logger.Logger("debug")
 
@@ -15,14 +18,12 @@ class Runner:
         if not self._prepare_database():
             return
 
-        # TODO multithread?
         if scraper:
-            s = Scraper(self.config['parlis']['url'])
-            s.run()
+            sc = Scraper(self.config['parlis']['url'])
+            sc.run()
         if tagger:
-            t = Tagger()
-            t.run()
-
+            ta = Tagger()
+            ta.run()
 
     def _prepare_database(self):
         log.debug("Setting up database")
@@ -82,9 +83,9 @@ class Timer:
 
     def start(self, scraper=True, tagger=True):
         if tagger:
-            thread.start_new_thread(self.tagger)
+            threading.Thread(target=self.tagger).start()
         if scraper:
-            thread.start_new_thread(self.scraper)
+            threading.Thread(target=self.scraper).start()
 
         log.error("Threading stopped. Exiting.")
 
@@ -98,11 +99,11 @@ class Timer:
     def scraper(self):
         log.info("Scraper started.")
         while True:
-            Runner(True, False)
-            time.sleep(8+60*60 + rand.int(0, 240))
+            Runner(False, True)
+            time.sleep(8+60*60 + randint(0, 240))
         log.error("Scraper exited")
 
 
 if __name__ == '__main__':
     t = Timer()
-    t.start()
+    t.start(True, True)

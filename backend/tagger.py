@@ -12,12 +12,13 @@ class Tagger:
 
     def __init__(self):
         with db_session:
-            tag = Tag(start=datetime.now(), status="started")
+            tag_ = Tag(start=datetime.now(), status="started")
         if self.run():
             with db_session:
-                tag = Tag.select(status="started").order(desc(Tag.start)).first
-                tag.end = datetime.now()
-                tag.status = "finished"
+                tag = Tag.select(status="started").order_by(desc(Tag.start)).first()
+                if tag is not None:
+                    tag.end = datetime.now()
+                    tag.status = "finished"
 
 
     @db_session
@@ -65,7 +66,7 @@ class Tagger:
             for word, tags in keywords_content_sorted.items():
                 for tag, word_count in tags.items():
                     k_id = self._get_keyword_id(word, tag)
-                    FileKeyword(file_id=file.id, keyword_id=k_id, word_count=word_count)
+                    FileKeywordContent(file_id=file.id, keyword_id=k_id, word_count=word_count)
                     tot_words += word_count
 
             tot_title = 0
@@ -77,7 +78,7 @@ class Tagger:
                     f = FileKeyword(file_id=file.id, keyword_id=k_id, word_count=word_count)
                     tot_title += word_count
 
-            file.size = size
+            file.file_size = size
             file.word_count = tot_words
             file.title_word_count = tot_title
             file.pages = pages

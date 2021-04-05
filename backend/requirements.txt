@@ -2,3 +2,4 @@ pony
 pymysql
 pdfplumber
 requests
+beautifulsoup4
