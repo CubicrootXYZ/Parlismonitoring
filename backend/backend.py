@@ -12,10 +12,9 @@ log = logger.Logger("debug")
 
 
 class Runner:
-    def __init__(self, tagger=False, scraper=False):
-        if not self._load_config():
-            return
-        if not self._prepare_database():
+    def __init__(self, config, tagger=False, scraper=False, prepare_db=False):
+        self.config = config
+        if prepare_db and not self._prepare_database():
             return
 
         if scraper:
@@ -43,9 +42,42 @@ class Runner:
             return False
         return True
 
+
+class Timer:
+
+    def start(self, scraper=True, tagger=True):
+        if not self._load_config():
+            return
+
+        Runner(self.config, False, False, True) # init the database first, not multithread compatible2
+
+        if tagger:
+            threading.Thread(target=self.tagger, args=[self.config]).start()
+        if scraper:
+            time.sleep(10)
+            threading.Thread(target=self.scraper, args=[self.config]).start()
+
+        log.error("Threading stopped. Exiting.")
+
+    def tagger(self, config):
+        log.info("Tagger started.")
+        while True:
+            Runner(config, True, False)
+            time.sleep(10*60)
+        log.error("Tagger exited.")
+
+    def scraper(self, config):
+        log.info("Scraper started.")
+        while True:
+            Runner(config, False, True)
+            time.sleep(8+60*60 + randint(0, 240))
+        log.error("Scraper exited")
+
     def _load_config(self):
         reader = configparser.ConfigParser()
-        reader.read_file(open('config.ini'))
+        f = open('config.ini')
+        reader.read_file(f)
+        f.close()
         log.debug("Reading config")
 
         required_config = {
@@ -77,31 +109,6 @@ class Runner:
                     return False
         log.debug("Finished reading config")
         return True
-
-
-class Timer:
-
-    def start(self, scraper=True, tagger=True):
-        if tagger:
-            threading.Thread(target=self.tagger).start()
-        if scraper:
-            threading.Thread(target=self.scraper).start()
-
-        log.error("Threading stopped. Exiting.")
-
-    def tagger(self):
-        log.info("Tagger started.")
-        while True:
-            Runner(True, False)
-            time.sleep(10*60)
-        log.error("Tagger exited.")
-
-    def scraper(self):
-        log.info("Scraper started.")
-        while True:
-            Runner(False, True)
-            time.sleep(8+60*60 + randint(0, 240))
-        log.error("Scraper exited")
 
 
 if __name__ == '__main__':
