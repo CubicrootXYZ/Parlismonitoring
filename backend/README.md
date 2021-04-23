@@ -16,9 +16,9 @@ Please be aware, that the software used in this project might have restrictive l
 
 Some licensing terms you should pay attention to:
 
-* [RNN Tagger](https://www.cis.uni-muenchen.de/~schmid/tools/RNNTagger/Tagger-Licence)
-* Pony ORM - Apache 2.0 License
-* [PDFPlumber](https://github.com/jsvine/pdfplumber/blob/stable/LICENSE.txt)
+* [RNN Tagger](https://www.cis.uni-muenchen.de/~schmid/tools/RNNTagger/Tagger-Licence) (Custom)
+* [Pony ORM](https://www.apache.org/licenses/LICENSE-2.0) (Apache 2.0)
+* [PDFPlumber](https://github.com/jsvine/pdfplumber/blob/stable/LICENSE.txt) (MIT)
 
 You always can reach out to me via the communication channels provided on my webpage: [cubicroot.xyz](https://cubicroot.xyz)
 
