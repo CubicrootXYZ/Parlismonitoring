@@ -6,6 +6,6 @@ module.exports = {
         index: path.resolve(__dirname, '/app/index.html'),
         assetsPublicPath: "/",
         assetsSubDirectory: "src/assets"
-    }
+    },
     publicPath: ''
 }
