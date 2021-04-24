@@ -3,8 +3,8 @@ module.exports = {
         disableHostCheck: true
     },
     build: {
-        index: path.resolve(__dirname, '/app/index.html')
-        assetssPublicPath: "/",
+        index: path.resolve(__dirname, '/app/index.html'),
+        assetsPublicPath: "/",
         assetsSubDirectory: "src/assets"
     }
     publicPath: ''
