@@ -82,9 +82,6 @@ export default {
   components: {
   },
   data() {
-    let col = [
-            "#2b64d6"
-        ];
     return {
       contact: process.env.IMPRINT_CONTACT
     }
