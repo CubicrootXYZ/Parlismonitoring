@@ -6,7 +6,7 @@
 
 
             <h3>Angaben gemäß § 5 TMG:<br/><br/></h3>
-            {{ process.env.IMPRINT_CONTACT }}
+            {{ contact }}
 
             <br>
             Quelle: <i>Erstellt mit dem <a href='https://www.mth-partner.de/impressumgenerator/impressum-generator.php' target='_blank' title='Impressum-Generator'>Impressum-Generator</a> von </i> <i><a href="https://www.mth-partner.de/leistungen-rechtsanwalt-koeln/auslaenderrecht/" target="_blank">Helmer Tieben, Rechtsanwalt für Ausländerrecht, Köln</a></i><br><br>
@@ -28,7 +28,7 @@
             <p>I. Informationen über uns als Verantwortliche<br>II. Rechte der Nutzer und Betroffenen<br>III. Informationen zur Datenverarbeitung</p>
             <h3>I. Informationen über uns als Verantwortliche</h3>
             <p>Verantwortlicher Anbieter dieses Internetauftritts im datenschutzrechtlichen Sinne ist:</p>
-            {{ process.env.IMPRINT_CONTACT }}
+            {{ contact }}
             <h3>II. Rechte der Nutzer und Betroffenen</h3>
             <p>Mit Blick auf die nachfolgend noch näher beschriebene Datenverarbeitung haben die Nutzer und Betroffenen das Recht</p>
             <ul>
@@ -76,3 +76,18 @@
         <div class="col-md-2"></div>
     </div>
 </template>
+
+<script>
+export default {
+  components: {
+  },
+  data() {
+    let col = [
+            "#2b64d6"
+        ];
+    return {
+      contact: process.env.IMPRINT_CONTACT
+    }
+  }
+}
+</script>
