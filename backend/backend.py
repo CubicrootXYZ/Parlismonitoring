@@ -70,7 +70,7 @@ class Timer:
         log.info("Scraper started.")
         while True:
             Runner(config, False, True)
-            time.sleep(8+60*60 + randint(0, 240))
+            time.sleep(8*60*60 + randint(0, 6000))
         log.error("Scraper exited")
 
     def _load_config(self):
