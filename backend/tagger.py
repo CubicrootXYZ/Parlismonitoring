@@ -12,7 +12,7 @@ class Tagger:
 
     def __init__(self):
         with db_session:
-            last_tag = Tag.select(status="started").order_by(desc(Tag.start).first)
+            last_tag = Tag.select(status="started").order_by(desc(Tag.start)).first()
             if last_tag is not None and last_tag.start > (datetime.now() - timedelta(days=2)):
                 log.info("Tagger already running - skipping.")
                 return
