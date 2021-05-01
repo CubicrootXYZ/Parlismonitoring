@@ -42,11 +42,15 @@ class Tagger:
                 log.info(f"Invalid link given. Skipping. {link}")
                 continue
 
-            p = parser.Parser(link)
+            try:
+                p = parser.Parser(link)
+                text = p.get_text()
+                size = int(p.get_size())
+                pages = int(p.get_pages())
+            except Exception as e:
+                log.info(e)
+                continue
 
-            text = p.get_text()
-            size = int(p.get_size())
-            pages = int(p.get_pages())
             log.debug(f"Size: {size}")
 
             # roughly 40 seconds
