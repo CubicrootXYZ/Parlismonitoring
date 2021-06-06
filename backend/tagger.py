@@ -38,6 +38,9 @@ class Tagger:
 
             link = file.link
 
+            if file.insert_date < datetime.now - datetime.timedelta(days=30):
+                continue
+
             if not link.startswith('http://') and not link.startswith('https://'):
                 log.info(f"Invalid link given. Skipping. {link}")
                 continue
