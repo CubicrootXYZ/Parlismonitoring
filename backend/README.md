@@ -53,7 +53,7 @@ Some quick thoughts you should know:
 
 ### Via docker
 
-Coming soon. Unfortunately due to licensing restrictions I am not allowed to share the docker image with you, but I will provide the Dockerfile.
+Unfortunately due to licensing restrictions I am not allowed to share the docker image with you, but I will provide the Dockerfile in this repository.
 
 Please be aware of the "bad performance" of "RNN Tagger" as it is NOT gpu accelerated with the provided Dockerfile. Neural networks generally behave A LOT BETTER with gpu acceleration. This project IS NOT MENT TO BE USED IN PRODUCTION.
 

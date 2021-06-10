@@ -1,5 +1,7 @@
 # Frontend
 
+Vue 3 page that taks to the API.
+
 ## Troubleshooting
 
 **Can not find ../package.json**
@@ -23,6 +25,8 @@ module.exports = {
 ```
 
 ## Project setup
+Adapt the `/src/main.js` to your needs. Set the api's url and the webpages url.
+
 ```
 npm install
 ```
@@ -33,6 +37,9 @@ npm run serve
 ```
 
 ### Compiles and minifies for production
+
+An example Dockerfile for production use is provided within this repository.
+
 ```
 npm run build
 ```

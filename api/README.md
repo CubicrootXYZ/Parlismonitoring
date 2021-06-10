@@ -14,7 +14,7 @@ Keep an eye on the Licenses of the used libraries:
 
 ### Docker 
 
-tbd
+An example Dockerfile is provided within this repository.
 
 ### Manually
 
