@@ -43,7 +43,7 @@ class Tagger:
 
             link = file.link
 
-            if file.insert_date < datetime.now - timedelta(days=365):
+            if file.insert_date < datetime.now() - timedelta(days=365):
                 continue
 
             if not link.startswith('http://') and not link.startswith('https://'):

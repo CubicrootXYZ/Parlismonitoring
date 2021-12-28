@@ -1,4 +1,5 @@
-import datetime, inspect
+import datetime
+import inspect
 
 
 class Logger:
@@ -16,14 +17,18 @@ class Logger:
                 self.levels.append(l)
 
     def debug(self, message):
-        self._log(message, "debug", inspect.stack()[1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
+        self._log(message, "debug", inspect.stack()[
+                  1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
 
     def info(self, message):
-        self._log(message, "info", inspect.stack()[1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
+        self._log(message, "info", inspect.stack()[
+                  1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
 
     def error(self, message):
-        self._log(message, "error", inspect.stack()[1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
+        self._log(message, "error", inspect.stack()[
+                  1][0].f_locals['self'].__class__.__name__ + "." + inspect.stack()[1][3])
 
     def _log(self, message, level, caller):
         if level in self.levels:
-            print(f"{datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')} - [{level.upper()}] {caller}: {message}")
+            print(
+                f"{datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')} - [{level.upper()}] {caller}: {message}")
