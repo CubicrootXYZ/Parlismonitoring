@@ -1,4 +1,6 @@
-import os, collections, time
+import os
+import collections
+import time
 from pony.orm import *
 from includes import logger, rnntagger, parser
 from error import resource_error
@@ -12,7 +14,8 @@ class Tagger:
 
     def __init__(self):
         with db_session:
-            last_tag = Tag.select(status="started").order_by(desc(Tag.start)).first()
+            last_tag = Tag.select(status="started").order_by(
+                desc(Tag.start)).first()
             if last_tag is not None and last_tag.start > (datetime.now() - timedelta(days=2)):
                 log.info("Tagger already running - skipping.")
                 return
@@ -20,7 +23,8 @@ class Tagger:
             tag_ = Tag(start=datetime.now(), status="started")
         if self.run():
             with db_session:
-                tag = Tag.select(status="started").order_by(desc(Tag.start)).first()
+                tag = Tag.select(status="started").order_by(
+                    desc(Tag.start)).first()
                 if tag is not None:
                     tag.end = datetime.now()
                     tag.status = "finished"
@@ -28,7 +32,8 @@ class Tagger:
     @db_session
     def run(self, i=1):
         log.info("Starting tag process.")
-        files = File.select(title_word_count=None, word_count=None).order_by(File.publish_date)
+        files = File.select(title_word_count=None,
+                            word_count=None).order_by(File.publish_date)
         rnn = rnntagger.RnnTagger("german")
 
         log.debug(f"Found {len(files)} files to tag.")
@@ -38,7 +43,7 @@ class Tagger:
 
             link = file.link
 
-            if file.insert_date < datetime.now - timedelta(days=30):
+            if file.insert_date < datetime.now - timedelta(days=365):
                 continue
 
             if not link.startswith('http://') and not link.startswith('https://'):
@@ -72,21 +77,25 @@ class Tagger:
             keywords_content_sorted = self.sort(keywords_content)
             keywords_title_sorted = self.sort(keywords_title)
 
-            log.debug(f"Found {len(keywords_content)} words. Start inserting them.")
+            log.debug(
+                f"Found {len(keywords_content)} words. Start inserting them.")
             tot_words = 0
             for word, tags in keywords_content_sorted.items():
                 for tag, word_count in tags.items():
                     k_id = self._get_keyword_id(word, tag)
-                    FileKeywordContent(file_id=file.id, keyword_id=k_id, word_count=word_count)
+                    FileKeywordContent(
+                        file_id=file.id, keyword_id=k_id, word_count=word_count)
                     tot_words += word_count
 
             tot_title = 0
-            log.debug(f"Found {len(keywords_title)} words. Start inserting them.")
+            log.debug(
+                f"Found {len(keywords_title)} words. Start inserting them.")
             for word, tags in keywords_title_sorted.items():
                 for tag, word_count in tags.items():
 
                     k_id = self._get_keyword_id(word, tag)
-                    f = FileKeyword(file_id=file.id, keyword_id=k_id, word_count=word_count)
+                    f = FileKeyword(file_id=file.id,
+                                    keyword_id=k_id, word_count=word_count)
                     tot_title += word_count
 
             file.file_size = size
@@ -139,7 +148,8 @@ class Tagger:
                 if "root" not in word:
                     continue
 
-                word['root'] = word['root'].split("<")[0].split("(")[0].split(">")[0]  # clean word
+                word['root'] = word['root'].split("<")[0].split(
+                    "(")[0].split(">")[0]  # clean word
 
                 if len(word['root']) < 1 or word['root'] is None or (len(word['root']) > 1 and word['root'][0] in ["(", "/", ")", "{", "}", "<", ">"]) or len(word['root']) > 100:
                     continue
@@ -153,8 +163,3 @@ class Tagger:
                     ret[word['root']] = {}
                     ret[word['root']][type_] = 1
         return ret
-
-
-
-
-
