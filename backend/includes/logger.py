@@ -31,4 +31,4 @@ class Logger:
     def _log(self, message, level, caller):
         if level in self.levels:
             print(
-                f"{datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')} - [{level.upper()}] {caller}: {message}")
+                f"{datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - [{level.upper()}] {caller}: {message}")
