@@ -106,7 +106,6 @@ class Tagger:
             file.word_count = tot_words
             file.title_word_count = tot_title
             file.pages = pages
-            file.commit()
             log.debug(f"File DUR: {time.time()-file_start}")
             i += 1
 
