@@ -136,7 +136,11 @@ class Tagger:
         return type
 
     def _get_keyword_id(self, word, type_):
-        keyword = Keyword.select(word=word, type=type_).first()
+        try:
+            keyword = Keyword.select(word=word, type=type_).first()
+        except Exception as e:
+            print(f"Failed to search keyword {word} with error: {e}")
+            return -1
 
         if keyword is None:
             try:
