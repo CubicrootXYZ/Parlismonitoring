@@ -83,6 +83,8 @@ class Tagger:
             for word, tags in keywords_content_sorted.items():
                 for tag, word_count in tags.items():
                     k_id = self._get_keyword_id(word, tag)
+                    if k_id is -1:
+                        continue
                     FileKeywordContent(
                         file_id=file.id, keyword_id=k_id, word_count=word_count)
                     tot_words += word_count
@@ -94,6 +96,8 @@ class Tagger:
                 for tag, word_count in tags.items():
 
                     k_id = self._get_keyword_id(word, tag)
+                    if k_id is -1:
+                        continue
                     f = FileKeyword(file_id=file.id,
                                     keyword_id=k_id, word_count=word_count)
                     tot_title += word_count
@@ -102,7 +106,7 @@ class Tagger:
             file.word_count = tot_words
             file.title_word_count = tot_title
             file.pages = pages
-            commit()
+            file.commit()
             log.debug(f"File DUR: {time.time()-file_start}")
             i += 1
 
@@ -135,8 +139,12 @@ class Tagger:
         keyword = Keyword.select(word=word, type=type_).first()
 
         if keyword is None:
-            keyword = Keyword(created=datetime.now(), word=word, type=type_)
-            keyword.flush()
+            try:
+                keyword = Keyword(created=datetime.now(), word=word, type=type_)
+                keyword.flush()
+            except Exception as e:
+                print(f"Failed to insert keyword {keyword} with error: {e}")
+                return -1
 
         return keyword.id
 
